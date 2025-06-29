@@ -31,7 +31,7 @@ router.post('/trade-control', auth, adminAuth, async (req, res) => {
   }
 });
 
-router.post('/balance-adjust', auth belongings, adminAuth, async (req, res) => {
+router.post('/balance-adjust', auth, adminAuth, async (req, res) => {
   const { userId, amount, action } = req.body;
   try {
     const user = await User.findById(userId);
